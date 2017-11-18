@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @Component({
   selector: 'app-root',
@@ -13,27 +15,10 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.http.get<UserResponse>('https://api.github.com/users/seeschweiler').subscribe(
-      data => {
-        console.log("User Login: " + data.login);
-        console.log("Bio: " + data.bio);
-        console.log("Company: " + data.company);
-      },
-      (err: HttpErrorResponse) => {
-        if (err.error instanceof Error) {
-          console.log("Client-side error occured.");
-        } else {
-          console.log("Server-side error occured.");
-        }
-      }
-    );
-
-
+    this.http.get('https://api.github.com/users/seeschweiler').subscribe(data => {
+      console.log(data);
+    });
   }
 
-  interface UserResponse {
-      login: string;
-      bio: string;
-      company: string;
-  }
+
 }
