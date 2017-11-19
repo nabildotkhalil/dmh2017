@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <div style="text-align:center">
+      <h1>
+        Transfer with No Stress
+      </h1>
+    </div>
+    <nav>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn-primary" ngbButtonLabel>
+        <a class="btn-primary" ngbButtonLabel routerLink="/timeline" routerLinkActive="active">Timeline</a>
+        </label>
+       <label class="btn-primary" ngbButtonLabel>
+         <a class="btn-primary" ngbButtonLabel routerLink="/map" routerLinkActive="active">Map</a>
+        </label>
+      </div>
+    </nav>
+
+
+    <router-outlet></router-outlet>
+  `
 })
-export class AppComponent {
-  title = 'app';
-
-  constructor(private http: HttpClient){
-  }
-
-  ngOnInit(): void {
-    this.http.get('https://api.github.com/users/seeschweiler').subscribe(data => {
-      console.log(data);
-    });
-  }
-
-
-}
+export class AppComponent { }
