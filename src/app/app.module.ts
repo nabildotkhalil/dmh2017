@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { TimelineComponent }   from '../timeline/timeline.component';
 import { MapComponent }     from '../map/map.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
+
 
 const appRoutes: Routes = [
 { path: 'timeline', component: TimelineComponent },
@@ -26,6 +28,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     VerticalTimelineModule,
+    AgmCoreModule.forRoot({
+      apiKey: ' AIzaSyB5FygeE8QeDTpwJGTLt7wDe3rNYSHkFNQ '
+    }),
     FormsModule,
      RouterModule.forRoot(
       appRoutes,
