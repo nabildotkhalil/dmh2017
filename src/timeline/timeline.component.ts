@@ -17,7 +17,7 @@ export class TimelineComponent {
     headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'app_id': 'b366af3b',
-    'app_key': '99142a55f7b7f078abc9fb3d33e55556',
+    'app_key': '',
     'resourceVersion':'v1',
     'Access-Control-Allow-Headers':'X-Requested-With, accept, content-type',
     'Access-Control-Allow-Methods': '*',
